@@ -4,18 +4,18 @@ import { useNavigate } from "react-router-dom";
 function Home() {
   const [products, setProducts] = useState([]);
 
-  useEffect(() => {
-    http
-      .get("products?featured=true")
-      .then((data) => {
-        if (data.status == 200) {
-          setProducts(data.data.data);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+    useEffect(() => {
+      http
+        .get("products?featured=true")
+        .then((data) => {
+          if (data.status == 200) {
+            setProducts(data.data.data);
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }, []);
 
   const navigate = useNavigate();
   function handleRadirect(id) {
